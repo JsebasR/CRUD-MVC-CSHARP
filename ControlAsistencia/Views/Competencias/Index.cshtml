@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ControlAsistencia.Models.Competencia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<center><h1>Listado Competencias de los Programas de Formacion</h1></center>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Competencia</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table" id="Competencias2">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Denominacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Denominacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CompetenciaId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CompetenciaId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CompetenciaId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @section Scripts{
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="~/js/Competenc.js"></script>
+    }
+
+</div>

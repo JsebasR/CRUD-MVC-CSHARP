@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<br>
+<center><h1>Listado Programas de Formación Sena</h1></center>
+<br />
+<div class="table-responsive">
+    <table class="table table-secondary" id="table_programas">
+        <thead >
+            <tr >
+                <th >
+                    ProgramaId
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Version
+                </th>
+                <th>
+                    Codigo
+                </th>
+                <th>
+                   
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <p><a asp-action="Create" class="btn btn-outline-info">Crear Programa</a></p>
+
+    @section Scripts{
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="~/js/Program.js"></script>
+    }
+</div>
+
+
